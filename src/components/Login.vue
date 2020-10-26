@@ -10,7 +10,7 @@
     <p><a href="#">비밀번호 찾기</a></p>
 
     <p>아직 회원이 아니신가요?</p>
-    <input type="button" value="회원가입" />
+    <input type="button" value="회원가입" @click="addUser" />
 
   </div>
 </template>
@@ -27,6 +27,9 @@ export default {
   methods: {
     goMain() {
       this.$router.push("hello");
+    },
+    addUser() {
+      this.$router.push("join");
     }
   }
 }
