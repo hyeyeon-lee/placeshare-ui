@@ -9,6 +9,7 @@ Vue.config.productionTip = false
 import HelloWorld from './components/HelloWorld.vue'
 import Login from './components/Login.vue'
 import Join from './components/Join.vue'
+import './quasar'
 
 const routes = [
   { path: '/hello', component: HelloWorld },
