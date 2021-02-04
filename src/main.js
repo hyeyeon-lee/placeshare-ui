@@ -1,26 +1,30 @@
-import Vue from 'vue'
-import App from './App.vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import App from "./App.vue";
+import VueRouter from "vue-router";
+
+import "./assets/css/layout.css"; // layout.css
 
 Vue.use(VueRouter);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
-import HelloWorld from './components/HelloWorld.vue'
-import Login from './components/Login.vue'
-import Join from './components/Join.vue'
-import './quasar'
+import HelloWorld from "./components/HelloWorld.vue";
+import Login from "./components/Login.vue";
+import Join from "./components/Join.vue";
+import Main from "./views/Main.vue";
+import "./quasar";
 
 const routes = [
-  { path: '/hello', component: HelloWorld },
-  { path: '/login', component: Login },
-  { path: '/join', component: Join },
-]
+  { path: "/", component: Login },
+  { path: "/hello", component: HelloWorld },
+  { path: "/join", component: Join },
+  { path: "/main", component: Main }
+];
 
 const router = new VueRouter({
   routes
-})
+});
 new Vue({
   router,
-  render: h => h(App),
-}).$mount('#app')
+  render: h => h(App)
+}).$mount("#app");
