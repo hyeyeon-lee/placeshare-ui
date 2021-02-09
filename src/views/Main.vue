@@ -9,7 +9,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="rightDrawerOpen" id="right_drawer" bordered content-class="bg-grey-2" side="right" overlay>
+    <q-drawer v-model="rightDrawerOpen" id="rightDrawer" bordered content-class="bg-grey-2" side="right" overlay>
       <q-list>
         <q-item clickable>
           Home
@@ -21,7 +21,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container @click="closeMenu">
       <HelloWorld />
     </q-page-container>
   </q-layout>
@@ -29,7 +29,7 @@
 
 <script>
 import HelloWorld from '../components/HelloWorld.vue';
-
+import Vue from 'vue';
 export default {
   name: 'LayoutDefault',
 
@@ -45,7 +45,9 @@ export default {
 
   methods: {
     closeMenu() {
-      if (this.rightDrawerOpen) this.rightDrawerOpen = false;
+      //if (this.rightDrawerOpen) this.rightDrawerOpen = false;
+      console.log(Vue);
+      Vue.hideDrawer();
     }
   }
 };
