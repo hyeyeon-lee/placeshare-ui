@@ -22,24 +22,43 @@
     </q-drawer>
 
     <q-page-container @click="closeMenu">
-      <HelloWorld />
+      <div class="">
+        <div class="row justify-between">
+          <q-parallax :height="1000">
+            <template v-slot:media>
+              <img src="@images/banner5.jpg" />
+            </template>
+            <template v-slot:content>
+              <div>
+                <p class="text-h2 text-white">어떤 공간이 필요하세요?</p>
+                <p class="text-h5 text-white">지금 바로 검색해 보세요</p>
+                <q-select v-model="sido" :options="sidoOptions" label="시/도 선택" outlined />
+                <q-select v-model="gugun" :options="gugunOptions" label="구/군 선택" outlined />
+                에 있는
+                <q-select v-model="gugun" :options="gugunOptions" label="전체" outlined />
+                중에서
+                <q-input placeholder="날짜 선택"></q-input>
+              </div>
+            </template>
+          </q-parallax>
+        </div>
+      </div>
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld.vue';
 import Vue from 'vue';
 export default {
   name: 'LayoutDefault',
 
-  components: {
-    HelloWorld
-  },
+  components: {},
 
   data() {
     return {
-      rightDrawerOpen: false
+      rightDrawerOpen: false,
+      sido: '',
+      sidoOptions: ['서울시']
     };
   },
 
