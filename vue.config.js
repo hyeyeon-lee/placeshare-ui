@@ -5,7 +5,10 @@ module.exports = {
       rtlSupport: false
     }
   },
-  transpileDependencies: [
-    'quasar'
-  ]
-}
+  transpileDependencies: ['quasar'],
+  configureWebpack: {
+    resolve: {
+      alias: require('./aliases.config').webpack
+    }
+  }
+};

@@ -12,7 +12,7 @@ Vue.use(Plugin);
 
 Vue.config.productionTip = false;
 
-import routes from './routes/index.js';
+import routes from '@/routes/index.js';
 
 import './quasar';
 
