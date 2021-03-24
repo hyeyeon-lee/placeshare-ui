@@ -1,26 +1,6 @@
 <template>
   <q-layout view="lHr Lpr lFf">
-    <q-header class="op0">
-      <q-toolbar>
-        <q-toolbar-title class="text-black">
-          Placeshare
-        </q-toolbar-title>
-        <q-btn flat dense @click="rightDrawerOpen = !rightDrawerOpen" aria-label="Menu" icon="menu" label="Menu" class="text-black" />
-      </q-toolbar>
-    </q-header>
-
-    <q-drawer v-model="rightDrawerOpen" id="rightDrawer" bordered content-class="bg-grey-2" side="right" overlay>
-      <q-list>
-        <q-item clickable>
-          Home
-        </q-item>
-        <q-item clickable tag="a" target="_blank">Place</q-item>
-        <q-item clickable tag="a" target="_blank">Share</q-item>
-        <q-item clickable tag="a" target="_blank">Event</q-item>
-        <q-item clickable tag="a" target="_blank">Promotion</q-item>
-      </q-list>
-    </q-drawer>
-
+    <menu-view></menu-view>
     <q-page-container @click="closeMenu">
       <div class="">
         <div class="row justify-between">
@@ -35,9 +15,13 @@
                 <q-select v-model="sido" :options="sidoOptions" label="시/도 선택" outlined />
                 <q-select v-model="gugun" :options="gugunOptions" label="구/군 선택" outlined />
                 에 있는
-                <q-select v-model="gugun" :options="gugunOptions" label="전체" outlined />
+                <q-select v-model="type" :options="typeOptions" label="전체" outlined />
                 중에서
-                <q-input placeholder="날짜 선택"></q-input>
+                <q-input type="date" placeholder="날짜 선택" v-model="date"></q-input>
+                <q-input type="number" placeholder="인원" v-model="person"></q-input>
+                <q-input placeholder="검색어를 입력해 주세요" v-model="keyword"></q-input>
+                할 장소
+                <q-btn label="검색" @click="movePlaceList"></q-btn>
               </div>
             </template>
           </q-parallax>
@@ -49,16 +33,24 @@
 
 <script>
 import Vue from 'vue';
+import MenuView from './Menu';
 export default {
-  name: 'LayoutDefault',
+  name: 'MainView',
 
-  components: {},
+  components: { MenuView },
 
   data() {
     return {
       rightDrawerOpen: false,
       sido: '',
-      sidoOptions: ['서울시']
+      sidoOptions: ['서울시'],
+      gugun: '',
+      gugunOptions: [],
+      typeOptions: ['파티룸', '스터디카페'],
+      type: '',
+      date: '2021-03-06',
+      person: 2,
+      keyword: '',
     };
   },
 
@@ -67,8 +59,12 @@ export default {
       //if (this.rightDrawerOpen) this.rightDrawerOpen = false;
       console.log(Vue);
       Vue.hideDrawer();
-    }
-  }
+    },
+    movePlaceList() {
+      // api
+      this.$router.push('/login');
+    },
+  },
 };
 </script>
 
