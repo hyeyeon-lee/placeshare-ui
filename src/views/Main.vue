@@ -1,16 +1,21 @@
 <template>
   <q-layout view="lHr Lpr lFf">
     <header-view></header-view>
+    <top-place-view :type="`best`"></top-place-view>
+    <top-place-view :type="`new`"></top-place-view>
+    <footer-view></footer-view>
   </q-layout>
 </template>
 
 <script>
 import Vue from 'vue';
 import HeaderView from './Header.vue';
+import TopPlaceView from './TopPlace.vue';
+import FooterView from './Footer.vue';
 export default {
   name: 'MainView',
 
-  components: { HeaderView },
+  components: { HeaderView, TopPlaceView, FooterView },
 
   data() {
     return {
