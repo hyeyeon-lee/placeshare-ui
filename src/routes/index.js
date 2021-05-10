@@ -1,13 +1,13 @@
-import HelloWorld from "../components/HelloWorld.vue";
-import Login from "../components/Login.vue";
-import Join from "../components/Join.vue";
-import Main from "../views/Main.vue";
+import HelloWorld from '../components/HelloWorld.vue';
+import Login from '../views/login/Login.vue';
+import Join from '../views/login/Join.vue';
+import Main from '../views/Main.vue';
 
 const routes = [
-  { path: "/login", component: Login },
-  { path: "/hello", component: HelloWorld },
-  { path: "/join", component: Join },
-  { path: "/", component: Main }
+  { path: '/login', component: Login },
+  { path: '/hello', component: HelloWorld },
+  { path: '/join', component: Join },
+  { path: '/', component: Main },
 ];
 
 export default routes;

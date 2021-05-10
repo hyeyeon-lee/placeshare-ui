@@ -16,21 +16,21 @@
 
 <script>
 export default {
-  name: "Login",
+  name: 'Login',
   data() {
     return {
-      id: "abc",
-      password: "abc"
+      id: 'abc',
+      password: 'abc',
     };
   },
   methods: {
     goMain() {
-      this.$router.push("main");
+      this.$router.push('/');
     },
     addUser() {
-      this.$router.push("join");
-    }
-  }
+      this.$router.push('join');
+    },
+  },
 };
 </script>
 
