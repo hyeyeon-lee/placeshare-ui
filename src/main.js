@@ -16,11 +16,18 @@ import routes from '@/routes/index.js';
 
 import './quasar';
 
+// router mode
+// default: hash (#)
+// prev: abstract ~2021
+// current: history 2021~
+const mode = 'history';
+
 const router = new VueRouter({
-  routes
+  mode,
+  routes,
 });
 
 new Vue({
   router,
-  render: h => h(App)
+  render: h => h(App),
 }).$mount('#app');
