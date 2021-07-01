@@ -36,6 +36,7 @@
 
         <q-card-section class="q-pt-none">
           {{ lorem }}
+
         </q-card-section>
       </q-card>
     </div>
@@ -58,9 +59,11 @@ export default {
   },
   components: {},
   data() {
-    return {};
+    return {
+      lorem: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci assumenda autem distinctio dolores dolorum earum enim esse illo maxime neque, omnis pariatur quam quas quos rem rerum voluptate. Perspiciatis, sequi?"
+    };
   },
-  computed() {},
+  computed: {},
   methods: {},
 };
 </script>
