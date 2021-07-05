@@ -2,6 +2,7 @@
   <div>
     <menu-view></menu-view>
     <q-page-container>
+      <!-- todo: 분리 -->
       <div class="">
         <div class="row justify-between">
           <q-parallax :height="1000">

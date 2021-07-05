@@ -11,10 +11,10 @@
 
     <q-drawer v-model="rightDrawerOpen" bordered content-class="bg-grey-2" side="right" overlay @mouseleave="hideMenu">
       <q-list>
-        <q-item clickable>
+        <q-item clickable to="/main">
           Home
         </q-item>
-        <q-item clickable tag="a" target="_blank">Place</q-item>
+        <q-item clickable tag="a" to="/place">Place</q-item>
         <q-item clickable tag="a" target="_blank">Share</q-item>
         <q-item clickable tag="a" target="_blank">Event</q-item>
         <q-item clickable tag="a" target="_blank">Promotion</q-item>
