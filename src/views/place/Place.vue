@@ -4,7 +4,12 @@
 
 <script>
 export default {
-  name: "Place"
+  name: "Place",
+  watch: {
+    $route(val) {
+      console.log(val)
+    }
+  }
 }
 </script>
 
