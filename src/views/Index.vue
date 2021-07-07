@@ -1,7 +1,11 @@
 <template>
   <q-layout view="lHr Lpr lFf">
     <header-view></header-view>
-    <router-view></router-view>
+    <transition>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </transition>
     <footer-view></footer-view>
   </q-layout>
 </template>
