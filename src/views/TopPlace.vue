@@ -12,6 +12,7 @@
 
         <q-card-section class="q-pt-none">
           {{ lorem }}
+          <q-btn label="button"></q-btn>
         </q-card-section>
       </q-card>
       <q-card class="my-card">
@@ -24,6 +25,7 @@
 
         <q-card-section class="q-pt-none">
           {{ lorem }}
+          <q-btn label="button" @click="onClickBtn1"></q-btn>
         </q-card-section>
       </q-card>
       <q-card class="my-card">
@@ -36,7 +38,7 @@
 
         <q-card-section class="q-pt-none">
           {{ lorem }}
-
+          <q-btn label="button" @click="onClickBtn2"></q-btn>
         </q-card-section>
       </q-card>
     </div>
@@ -64,7 +66,14 @@ export default {
     };
   },
   computed: {},
-  methods: {},
+  methods: {
+    onClickBtn1() {
+      this.$emit('update:type', 'new')
+    },
+    onClickBtn2() {
+      this.$emit('click')
+    },
+  },
 };
 </script>
 

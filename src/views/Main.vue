@@ -1,6 +1,6 @@
 <template>
   <div>
-    <top-place-view :type="`best`"></top-place-view>
+    <top-place-view :type.sync="best" @click="onClickBtn"></top-place-view>
     <top-place-view :type="`new`"></top-place-view>
   </div>
 </template>
@@ -17,10 +17,16 @@ export default {
   ,
 
   data() {
-    return {};
+    return {
+      best:'best'
+    };
   },
 
-  methods: {}
+  methods: {
+    onClickBtn() {
+      console.log('click')
+    }
+  }
 
 }
 ;
